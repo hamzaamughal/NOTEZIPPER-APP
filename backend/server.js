@@ -6,11 +6,11 @@ const app = express()
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
+app.get('/api/notes', (req, res) => {
     res.json(notes)
 })
 
-app.get('/:id', (req, res) => {
+app.get('/api/notes/:id', (req, res) => {
     const note = notes.find((n) => n._id === req.params.id)
     res.json(note)
 })
